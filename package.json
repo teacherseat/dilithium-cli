@@ -1,0 +1,32 @@
+{
+  "name": "dilithium-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "computer": "node ./cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ExamProCo/dilithium-cli.git"
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": ">=10.16.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ExamProCo/dilithium-cli/issues"
+  },
+  "homepage": "https://github.com/ExamProCo/dilithium-cli#readme",
+  "devDependencies": {
+    "chalk": "^2.4.2",
+    "command-line-args": "^5.1.1",
+    "command-line-usage": "^6.0.2"
+  },
+  "bin": {
+    "computer": "./cli.js"
+  }
+}
