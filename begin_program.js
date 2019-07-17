@@ -7,29 +7,30 @@ function begin_program(opts){
     console.log(`You must supply a name [computer beging program ${chalk.green('alpha1')}]`)
     return
   }
-  if (fs.existsSync(path.resolve(__dirname,opts.name))) {
+  if (fs.existsSync(path.resolve(opts.dir,opts.name))) {
     console.log(`a directory called ${chalk.green(opts.name)} already exists, aborting.`)
   }
-  fs.mkdirSync(path.resolve(__dirname,opts.name))
-  mkfil(opts.name, undefined, 'README.md')
-  mkfil(opts.name, undefined,'package.json')
-  mkfil(opts.name, undefined,'webpack.config.js')
-  mkdir(opts.name, 'public', {keep: true})
-  mkdir(opts.name, 'src')
-  mkdir(opts.name, 'src/application', {quiet: true})
-  mkfil(opts.name, 'src/application', 'config.js')
-  mkfil(opts.name, 'src/application', 'routes.coffee')
-  mkdir(opts.name, 'src/application/views', {quiet: true})
-  mkdir(opts.name, 'src/application/views/pages', {quiet: true})
-  mkfil(opts.name, 'src/application/views/pages', 'home.coffee')
-  mkdir(opts.name, 'src/application/components', {keep: true})
-  mkdir(opts.name, 'src/application/services'  , {quiet: true})
-  mkfil(opts.name, 'src/application/services'  , 'api.coffee')
-  mkdir(opts.name, 'src/application/models'    , {keep: true})
-  mkdir(opts.name, 'src/shared', {quiet: true})
-  mkdir(opts.name, 'src/shared/layouts', {quiet: true})
-  mkfil(opts.name, 'src/shared/layouts'        , 'application.coffee')
-  mkdir(opts.name, 'src/shared/components'     , {keep: true})
+  fs.mkdirSync(path.resolve(opts.dir,opts.name))
+  const root = `${opts.dir}/${opts.name}`
+  mkfil(root, undefined, 'README.md')
+  mkfil(root, undefined,'package.json')
+  mkfil(root, undefined,'webpack.config.js')
+  mkdir(root, 'public', {keep: true})
+  mkdir(root, 'src')
+  mkdir(root, 'src/application', {quiet: true})
+  mkfil(root, 'src/application', 'config.js')
+  mkfil(root, 'src/application', 'routes.coffee')
+  mkdir(root, 'src/application/views', {quiet: true})
+  mkdir(root, 'src/application/views/pages', {quiet: true})
+  mkfil(root, 'src/application/views/pages', 'home.coffee')
+  mkdir(root, 'src/application/components', {keep: true})
+  mkdir(root, 'src/application/services'  , {quiet: true})
+  mkfil(root, 'src/application/services'  , 'api.coffee')
+  mkdir(root, 'src/application/models'    , {keep: true})
+  mkdir(root, 'src/shared', {quiet: true})
+  mkdir(root, 'src/shared/layouts', {quiet: true})
+  mkfil(root, 'src/shared/layouts'  , 'application.coffee')
+  mkdir(root, 'src/shared/components' , {keep: true})
 }
 
 function mkfil(root,dir,filename){
@@ -37,10 +38,10 @@ function mkfil(root,dir,filename){
   const template_path = path.resolve(__dirname,'templates',filename)
   if (dir === undefined) {
     console.log(`      ${chalk.green.bold('create')}  ${filename}`)
-    new_path = path.resolve(__dirname,root,filename)
+    new_path = path.resolve(root,filename)
   } else {
     console.log(`      ${chalk.green.bold('create')}  ${dir}/${filename}`)
-    new_path = path.resolve(__dirname,root,dir,filename)
+    new_path = path.resolve(root,dir,filename)
   }
   fs.createReadStream(template_path).pipe(fs.createWriteStream(new_path))
 }
@@ -50,9 +51,9 @@ function mkdir(root,dir,opts={}){
   } else {
     console.log(`      ${chalk.green.bold('create')}  ${dir}`)
   }
-  fs.mkdirSync(path.resolve(__dirname,root,dir))
+  fs.mkdirSync(path.resolve(root,dir))
   if (opts.keep === true){
-    fs.openSync(path.resolve(__dirname,root,dir,'.keep'), 'w')
+    fs.openSync(path.resolve(root,dir,'.keep'), 'w')
   }
 }
 

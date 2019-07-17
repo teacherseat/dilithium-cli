@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const command = require('command-line-args')
 const begin_program = require('./begin_program.js')
 
@@ -19,6 +21,7 @@ if (opts.command === 'begin') {
   const argv_begin = opts_begin._unknown || []
   if (argv_begin[1] === 'program') {
     begin_program({
+      dir: process.cwd(),
       name: argv_begin[2]
     })
   }
