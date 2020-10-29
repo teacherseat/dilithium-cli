@@ -15,3 +15,5 @@ so we need to do a link:
 cd dilithium-cli
 npm link
 ```
+
+Now you should be able to use the `computer` command.
