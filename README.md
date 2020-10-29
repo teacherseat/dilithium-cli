@@ -6,8 +6,12 @@
 computer being program <name-of-app>
 ```
 
-## Development
+## Globally Install For Developmenet
 
-* Clone the dilithium-cli directory.
-* cd into dilithium-cli directory.
-* `npm link` to globally link this package
+For developement we'll want to be able to globall install this package
+so we need to do a link:
+
+```
+cd dilithium-cli
+npm link
+```
