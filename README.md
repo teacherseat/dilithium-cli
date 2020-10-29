@@ -3,7 +3,7 @@
 ## Usage
 
 ```
-computer being program <name-of-app>
+computer begin program <name-of-app>
 ```
 
 ## Globally Install For Developmenet

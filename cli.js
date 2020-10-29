@@ -10,7 +10,6 @@ const def = [
 ]
 const opts = command(def, { stopAtFirstUnknown: true })
 const argv = opts._unknown || []
-//console.log(opts)
 // -----------------------------------------
 // Begin Command
 if (opts.command === 'begin') {
