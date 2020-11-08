@@ -21,7 +21,7 @@
     "url": "https://github.com/ExamProCo/dilithium-cli/issues"
   },
   "homepage": "https://github.com/ExamProCo/dilithium-cli#readme",
-  "devDependencies": {
+  "dependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.5.0",
     "chalk": "^2.4.2",
     "command-line-args": "^5.1.1",
