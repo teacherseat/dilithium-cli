@@ -18,3 +18,9 @@ You'll need to watch fo changes:
 ```
 npm run watch
 ```
+
+## Build for Production
+
+```
+npm run build
+```

@@ -1,7 +1,7 @@
-import * as m from 'mithril'
+import { route } from 'dilithium-js'
 import PagesHome from 'views/pages/home'
 
 routes =
   '/': PagesHome
-m.route.prefix = ''
-m.route document.body, '/', routes
+route.prefix = ''
+route document.body, '/', routes

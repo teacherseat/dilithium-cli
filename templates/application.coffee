@@ -1,6 +1,5 @@
-import * as m from 'mithril'
-import { View } from 'dilithium-js'
+import { m, View } from 'dilithium-js'
 
 class ApplicationLayout extends View
-  view:(vnode)->
+  render:=>
     m 'main'
