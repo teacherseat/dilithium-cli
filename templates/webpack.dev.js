@@ -49,7 +49,7 @@ module.exports = {
     'application.js'          : path.resolve(__dirname, 'src/javascripts/routes.coffee')
   },
   output: {
-    path    : path.resolve(__dirname, '..', 'public'),
+    path    : path.resolve(__dirname, 'public'),
     filename: '[name]'
   },
   resolve: {

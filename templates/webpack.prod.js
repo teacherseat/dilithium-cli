@@ -52,7 +52,7 @@ module.exports = {
     'application.min'         : path.resolve(__dirname, 'src/javascripts/routes.coffee')
   },
   output: {
-    path    : path.resolve(__dirname, '..', 'public'),
+    path    : path.resolve(__dirname, 'public'),
     filename: '[name].[hash].js'
   },
   resolve: {
