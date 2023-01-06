@@ -65,7 +65,7 @@ module.exports = {
     }
   },
   plugins: [
-    new MiniCssExtractPlugin({ file: '[name].css'}),
+    new MiniCssExtractPlugin({ filename: '[name].css'}),
     new webpack.DefinePlugin({
       "process.env": JSON.stringify(dotenv.parsed)
     }),

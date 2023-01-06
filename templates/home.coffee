@@ -1,6 +1,7 @@
-import { m, View } from 'dilithium-js'
+import { m } from 'dilithium-js'
+import ApplicationLayout from 'layouts/application'
 
-export default class PagesHome extends View
+export default class PagesHome extends ApplicationLayout
   render:=>
-    m '.computer', 'Engage'
+    m '.computer', 'Engage!'
 
